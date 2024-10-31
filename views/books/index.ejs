@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Library</title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1>Welcome to Your Library</h1>
+    <ul>
+      <% books.forEach((book)=>{ %>
+        <li>
+          <a href="/users/<%= user._id %>/books/<%= book._id %>"><%= book.title.charAt(0).toUpperCase() + book.title.slice(1) %></a>
+        </li>
+      <% }) %>
+    </ul>
+  
+  <a href="/users/<%=user._id%>/books/new">Click Here to Add a New Book!</a>
+</body>
+</html>
