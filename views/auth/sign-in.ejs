@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Itim&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:wght@300;400&display=swap');
+  </style>
+  <link rel="stylesheet" href="/style.css">
   <title>Sign In</title>
 </head>
 <body>
-  <%- include('../partials/_navbar.ejs') %>
-  <h1>Sign In</h1>
+  <a href="/">Home</a>
+  <a href="/auth/sign-up">Sign Up</a>
+  <h1>Sign In to BookTrac</h1>
   <form action="/auth/sign-in" method="POST">
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" required />
