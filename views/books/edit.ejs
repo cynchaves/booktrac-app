@@ -11,34 +11,26 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
-  <h1><%= book.title %></h1>
-
-  <form action="/users/<%= user._id %>/books/<%= book._id %>?_method=PUT" method="POST">
-    <div>
-    <label for="title">New Title:</label>
-    <input type="text" name="title" id="title" value="<%= book.title %>">
-    </div>
-
-    <div>
-    <label for="author">New Author:</label>
-    <input type="text" name="author" id="author" value="<%= book.author %>">
-    </div>
-
-    <div>
-    <label for="pages">Page Count:</label>
-    <input type="text" name="pages" id="pages" value="<%= book.pages %>">
-    </div>
-
-    <label for="status">Status:</label>
-    <select id="status" name="status">
-      <option value="reading"<%= book.status === "reading" ? "selected" : "" %>>Reading</option>
-      <option value="finished"<%= book.status === "finished" ? "selected" : "" %>>Finished</option>
-    </select>
-
-    <div>
-    <button type="submit">Update Book</button>
-    </div>
-
-  </form>
+  <div class="update-page">
+    <h1><%= book.title %></h1>
+    <form action="/users/<%= user._id %>/books/<%= book._id %>?_method=PUT" method="POST">
+      <div class="update-form">
+        <label for="title">New Title:</label>
+        <input type="text" name="title" id="title" value="<%= book.title %>">
+        <label for="author">New Author:</label>
+        <input type="text" name="author" id="author" value="<%= book.author %>">
+        <label for="pages">Page Count:</label>
+        <input type="text" name="pages" id="pages" value="<%= book.pages %>">
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+          <option value="reading"<%= book.status === "reading" ? "selected" : "" %>>Reading</option>
+          <option value="finished"<%= book.status === "finished" ? "selected" : "" %>>Finished</option>
+        </select>
+        <div class="update-button-div">
+          <button class="button" type="submit">Update Book</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </body>
 </html>

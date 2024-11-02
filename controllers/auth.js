@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-
 const User = require('../models/user.js');
 
 router.get('/sign-up', (req, res) => {
@@ -28,7 +27,7 @@ router.post('/sign-up', async (req, res) => {
     }
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     req.body.password = hashedPassword;
-    
+
     await User.create(req.body);
     res.redirect('/auth/sign-in');
   } catch (error) {

@@ -31,7 +31,6 @@ app.use(session({
     saveUninitialized: false,
   })
 );
-
 app.use(passUserToView);
 
 app.get('/', (req, res) => {

@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const User = require('../models/user.js');
 
 router.get('/', async (req, res) => {
@@ -15,10 +14,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/new', async (req, res) => {
-  res.render('books/new.ejs');
-});
-
 router.get('/:bookId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user);
@@ -30,6 +25,10 @@ router.get('/:bookId', async (req, res) => {
     console.log(error);
     res.redirect('/')
   }
+});
+
+router.get('/new', async (req, res) => {
+  res.render('books/new.ejs');
 });
 
 router.post('/', async (req, res) => {
@@ -83,6 +82,5 @@ router.delete('/:bookId', async (req, res) => {
     res.redirect('/')
   }
 });
-
 
 module.exports = router;

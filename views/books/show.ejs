@@ -11,22 +11,21 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
-  <h1><%= book.title.charAt(0).toUpperCase() + book.title.slice(1) %></h1>
-  
-  <h3>Author: <%= book.author.charAt(0).toUpperCase() + book.author.slice(1) %></h3>
-
-  <% if (book.pages) { %>
-    <h3>Page Count: <%= book.pages %></h3>
-  <% } %>
-
-  <h3>Current Progress: <%= book.status.charAt(0).toUpperCase() + book.status.slice(1) %></h3>
-  
-  <form action="/users/<%= user._id %>/books/<%= book._id %>/edit" method="GET">
-  <button type="submit">Edit Book Details</button>
-  </form>
-  
-  <form action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE" method="POST">
-  <button type="submit">Delete Book</button>
-  </form>
+  <div class="show-page">
+    <h1><%= book.title %></h1>
+    <h3>Author: <%= book.author %></h3>
+    <% if (book.pages) { %>
+      <h3>Page Count: <%= book.pages %></h3>
+    <% } %>
+    <h3>Current Progress: <%= book.status.charAt(0).toUpperCase() + book.status.slice(1) %></h3>
+  </div>
+  <div class="edit-delete-div">
+    <form action="/users/<%= user._id %>/books/<%= book._id %>/edit" method="GET">
+      <button class="button" type="submit">Edit Book Details</button>
+    </form>
+    <form action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE" method="POST">
+      <button class="button" type="submit">Delete Book</button>
+    </form>
+  </div>
 </body>
 </html>
