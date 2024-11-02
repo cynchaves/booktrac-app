@@ -4,16 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Quicksand:wght@300..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
   </style>
   <link rel="stylesheet" href="/style.css">
   <title>BookTrac</title> 
 </head>
 <body>
   <%- include('./partials/_navbar.ejs') %>
-  <section class="home-parent">
-    <div class="home-child"><h1>Welcome to BookTrac!</h1></div>
-    <div class="home-child"><h1>Your Personal Virtual Library</h1></div>
-  </section>
+  <div class="welcome-message">
+    <h1>Welcome to BookTrac!</h1>
+    <h1>Your Personal Virtual Library</h1>
+  </div>
+  <div class="home-buttons-div">
+    <form action="/auth/sign-in" method="GET">
+      <button class="button" type="submit">Sign In</button>
+    </form>
+    <form action="/auth/sign-up" method="GET">
+      <button class="button" type="submit">Sign Up</button>
+    </form>
+  </div>
 </body>
 </html>

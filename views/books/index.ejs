@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Itim&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:wght@300;400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
   </style>
   <link rel="stylesheet" href="/style.css">
   <title>Your Library</title>
@@ -23,6 +23,11 @@
   </div>
   <div class="create-link">
     <a href="/users/<%=user._id%>/books/new">Click Here to Add a New Book!</a>
+  </div>
+  <div class="sign-out-button-div">
+    <form action="/auth/sign-out" method="GET">
+      <button class="button" type="submit">Sign Out</button>
+    </form>
   </div>
 </body>
 </html>

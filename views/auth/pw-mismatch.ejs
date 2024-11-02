@@ -4,17 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Itim&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:wght@300;400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
   </style>
   <link rel="stylesheet" href="/style.css">
   <title>Password Mismatch</title>
 </head>
 <body>
   <a href="/">Home</a>
+  <a href="/auth/sign-in">Sign In</a>
   <a href="/auth/sign-up">Back to Sign Up</a>
   <div class="failed-login">
     <h2>Passwords do not match</h2>
     <h2>Please try again</h2>
+  </div>
+  <div class="sign-up-button-div">
+    <form action="/auth/sign-up" method="GET">
+      <button class="button" type="submit">Back to Sign Up</button>
+    </form>
   </div>
 </body>
 </html>

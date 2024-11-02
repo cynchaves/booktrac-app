@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Itim&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:wght@300;400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
   </style>
   <link rel="stylesheet" href="/style.css">
   <title>Add a New Book</title>
@@ -16,13 +16,13 @@
     <form action="/users/<%= user._id %>/books" method="POST">
       <div class="create-form">
         <label for="title">Title:</label>
-        <input type="text" name="title" id="title" required>
+        <input class="input" type="text" name="title" id="title" required>
         <label for="author">Author:</label>
-        <input type="text" name="author" id="author" required>
+        <input class="input" type="text" name="author" id="author" required>
         <label for="pages">Page Count:</label>
-        <input type="number" name="pages" id="pages">
+        <input class="input" type="number" name="pages" id="pages">
         <label for="status">Current Status:</label>
-        <select id="status" name="status">
+        <select class="input" id="status" name="status">
           <option value="reading">Reading</option>
           <option value="finished">Finished</option>
         </select>
