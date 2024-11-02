@@ -32,7 +32,13 @@ body {
 .home-child {
   font-size: 30px;
 }
-.sign-in {
+/* .failed-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+.sign-in, .failed-login {
   display: flex;
   flex-direction: column;
   justify-content: center;
